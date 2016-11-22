@@ -3,6 +3,7 @@ package com.flightbooking.service;
 import com.flightbooking.domain.Flight;
 import com.flightbooking.domain.Plane;
 import com.flightbooking.domain.Seat;
+import com.flightbooking.domain.Ticket;
 import com.flightbooking.persistence.Dao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ServiceConfiguration {
     @Bean(name = "simpleFlightService")
-    FlightService flightService(Dao<Flight> flightDao){
+    FlightService flightService(Dao<Flight> flightDao) {
         return new FlightService(flightDao);
     }
 
@@ -25,5 +26,9 @@ public class ServiceConfiguration {
     @Bean(name = "simplePlaneService")
     PlaneService planeService(Dao<Plane> planeDao) {
         return new PlaneService(planeDao);
+    }
+    @Bean(name = "simpleTicketService")
+    TicketService ticketService(Dao<Ticket> ticketDao) {
+        return new TicketService(ticketDao);
     }
 }

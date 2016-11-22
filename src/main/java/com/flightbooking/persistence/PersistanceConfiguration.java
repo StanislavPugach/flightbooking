@@ -64,7 +64,7 @@ public class PersistanceConfiguration {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/flightbooking");
         dataSource.setUsername("root");
-        dataSource.setPassword("79652054");
+        dataSource.setPassword("root");
 
         return dataSource;
     }
