@@ -2,6 +2,7 @@ package com.flightbooking.persistence;
 
 import com.flightbooking.domain.Flight;
 import com.flightbooking.domain.Seat;
+import com.flightbooking.domain.Ticket;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,5 +19,10 @@ public class DaoConfiguration {
     @Bean
     Dao<Seat> seatDao() {
         return new SeatDao();
+    }
+
+    @Bean
+    Dao<Ticket> ticketDao() {
+        return new TicketDao();
     }
 }
