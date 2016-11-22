@@ -5,8 +5,8 @@
     `plane` BIGINT NOT NULL,
     `departure` BIGINT NOT NULL,
     `arrival` BIGINT NOT NULL,
-    `departure_date` DATETIME NOT NULL,
-    `arrival_date` DATETIME NOT NULL,
+    `departure_date` DATE NOT NULL,
+    `arrival_date` DATE NOT NULL,
      FOREIGN KEY (plane) REFERENCES plane (id),
      FOREIGN KEY (departure) REFERENCES location (id),
      FOREIGN KEY (arrival) REFERENCES location (id)
