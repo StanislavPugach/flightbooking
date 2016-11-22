@@ -97,7 +97,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>finalProject</finalName>
+        <finalName>flightbooking</finalName>
     </build>
 
 </project>

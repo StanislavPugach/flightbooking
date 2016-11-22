@@ -6,7 +6,7 @@ import com.flightbooking.persistence.Dao;
 /**
  * Created by Stanislav Pugach on 18.11.2016.
  */
-public class FlightService implements SimpleFlightService<Flight> {
+public class FlightService implements SimpleService<Flight> {
     private final Dao<Flight> flightDao;
 
     public FlightService(Dao<Flight> dao){

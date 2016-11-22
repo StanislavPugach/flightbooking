@@ -13,4 +13,15 @@ public class Location {
     private long id;
     @Column(name = "place")
     private String location;
+
+    public Location(){
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }

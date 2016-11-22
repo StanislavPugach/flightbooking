@@ -11,12 +11,59 @@ public class Ticket {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "seat")
+
+    @ManyToOne
+    @JoinColumn(name = "seat")
     private Seat seat;
+
     @Column(name = "price")
-    private int price;
-    @Column(name = "flight")
+    private float price;
+
+    @ManyToOne
+    @JoinColumn(name = "flight")
     private Flight flight;
+
+    @Column(name = "sold")
+    private boolean sold = false;
+
+    @Column(name = "booked")
+    private boolean booked = false;
+
+    @Column(name = "deleted")
+    private boolean deleted = false;
+
+    public Ticket() {
+    }
+
+    public enum State {
+        SOLD,
+        BOOKED,
+        DELETED
+
+    }
+    public void setState(State enumValue) {
+        if (enumValue.equals(State.SOLD)){
+            this.sold = true;
+        }
+        if (enumValue.equals(State.BOOKED)){
+            booked = true;
+        }
+        if (enumValue.equals(State.DELETED)){
+            deleted = true;
+        }
+    }
+
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public boolean isSold() {
+        return sold;
+    }
 
     public long getId() {
         return id;
@@ -34,7 +81,7 @@ public class Ticket {
         this.seat = seat;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 

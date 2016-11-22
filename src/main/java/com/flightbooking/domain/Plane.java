@@ -7,17 +7,18 @@ import java.util.List;
  * Created by Stanislav Pugach on 18.11.2016.
  */
 @Entity(name = "plane")
- public class Plane {
+public class Plane {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "plane", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "plane", orphanRemoval = true)
     private List<Seat> seats;
     @Column(name = "model")
     private String model;
 
-
+    public Plane() {
+    }
 
     public String getModel() {
         return model;

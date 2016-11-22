@@ -1,7 +1,7 @@
 package com.flightbooking.mvc;
 
 import com.flightbooking.domain.Flight;
-import com.flightbooking.service.SimpleFlightService;
+import com.flightbooking.service.SimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 @RequestMapping(value = "/flight", produces = MediaType.APPLICATION_JSON_VALUE)
-public class MainController {
+public class FlightController {
     @Autowired
     @Qualifier(value = "simpleFlightService")
-    private SimpleFlightService<Flight> flightService;
+    private SimpleService<Flight> flightService;
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
     public ResponseEntity<Flight> getFlight(@RequestParam long id) {
@@ -29,9 +29,15 @@ public class MainController {
         return new ResponseEntity<Flight>(flight, HttpStatus.OK);
     }
 
-
+    @RequestMapping(value = "save", method = RequestMethod.POST)
     public ResponseEntity<Flight> save(@RequestBody Flight flight){
         flightService.save(flight);
+        return new ResponseEntity<Flight>(flight,HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Flight> test(@RequestBody Flight flight){
+        System.out.println(flight);
         return new ResponseEntity<Flight>(flight,HttpStatus.OK);
     }
 }
