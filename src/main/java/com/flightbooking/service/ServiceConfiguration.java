@@ -1,10 +1,10 @@
 package com.flightbooking.service;
 
-import com.flightbooking.domain.Flight;
-import com.flightbooking.domain.Plane;
-import com.flightbooking.domain.Seat;
-import com.flightbooking.domain.Ticket;
-import com.flightbooking.persistence.Dao;
+import com.flightbooking.model.Flight;
+import com.flightbooking.model.Plane;
+import com.flightbooking.model.Seat;
+import com.flightbooking.model.Ticket;
+import com.flightbooking.repository.Dao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +27,7 @@ public class ServiceConfiguration {
     PlaneService planeService(Dao<Plane> planeDao) {
         return new PlaneService(planeDao);
     }
+
     @Bean(name = "simpleTicketService")
     TicketService ticketService(Dao<Ticket> ticketDao) {
         return new TicketService(ticketDao);

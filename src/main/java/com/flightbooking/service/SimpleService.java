@@ -1,7 +1,5 @@
 package com.flightbooking.service;
 
-import com.flightbooking.domain.Flight;
-
 /**
  * Created by Stanislav Pugach on 18.11.2016.
  */

@@ -1,6 +1,6 @@
-package com.flightbooking.mvc;
+package com.flightbooking.controller;
 
-import com.flightbooking.domain.Plane;
+import com.flightbooking.controller.request.PlaneRequest;
 import com.flightbooking.service.SimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,23 +21,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PlaneController {
     @Autowired
     @Qualifier(value = "simplePlaneService")
-    private SimpleService<Plane> planeService;
+    private SimpleService<PlaneRequest> planeService;
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
-    public ResponseEntity<Plane> getSeatById(@RequestParam long id) {
-        Plane seat = planeService.getById(id);
-        return new ResponseEntity<Plane>(seat, HttpStatus.OK);
+    public ResponseEntity<PlaneRequest> getPlaneById(@RequestParam long id) {
+        PlaneRequest planeRequest = planeService.getById(id);
+        return new ResponseEntity<>(planeRequest, HttpStatus.OK);
     }
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public ResponseEntity<Plane> save(@RequestBody Plane seat){
-        planeService.save(seat);
-        return new ResponseEntity<Plane>(seat,HttpStatus.OK);
+    public ResponseEntity<PlaneRequest> save(@RequestBody PlaneRequest planeRequest){
+//        planeService.save(planeRequest);
+        return new ResponseEntity<>(planeRequest,HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Plane> test(){
-        Plane seat = new Plane();
-        return new ResponseEntity<Plane>(seat,HttpStatus.OK);
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<PlaneRequest> test(){
+        PlaneRequest plane = new PlaneRequest();
+        return new ResponseEntity<>(plane,HttpStatus.OK);
     }
 }

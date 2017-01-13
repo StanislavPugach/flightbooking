@@ -1,6 +1,6 @@
-package com.flightbooking.persistence;
+package com.flightbooking.repository;
 
-import com.flightbooking.domain.Seat;
+import com.flightbooking.model.Seat;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

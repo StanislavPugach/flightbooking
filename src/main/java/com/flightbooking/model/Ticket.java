@@ -1,4 +1,4 @@
-package com.flightbooking.domain;
+package com.flightbooking.model;
 
 import javax.persistence.*;
 

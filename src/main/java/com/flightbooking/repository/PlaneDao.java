@@ -1,6 +1,6 @@
-package com.flightbooking.persistence;
+package com.flightbooking.repository;
 
-import com.flightbooking.domain.Plane;
+import com.flightbooking.model.Plane;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -24,4 +24,5 @@ public class PlaneDao implements Dao<Plane>{
         manager.persist(plane);
         return plane;
     }
+
 }

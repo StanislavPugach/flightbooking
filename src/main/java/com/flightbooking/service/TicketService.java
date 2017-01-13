@@ -1,7 +1,7 @@
 package com.flightbooking.service;
 
-import com.flightbooking.domain.Ticket;
-import com.flightbooking.persistence.Dao;
+import com.flightbooking.model.Ticket;
+import com.flightbooking.repository.Dao;
 
 /**
  * Created by Татьяна on 22.11.2016.

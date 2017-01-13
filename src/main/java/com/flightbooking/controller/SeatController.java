@@ -1,7 +1,6 @@
-package com.flightbooking.mvc;
+package com.flightbooking.controller;
 
-import com.flightbooking.domain.Seat;
-import com.flightbooking.domain.Ticket;
+import com.flightbooking.model.Seat;
 import com.flightbooking.service.SimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,27 +17,27 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by Stanislav Pugach on 22.11.2016.
  */
 @Controller
-@RequestMapping(value = "/ticket", produces = MediaType.APPLICATION_JSON_VALUE)
-public class TicketController {
+@RequestMapping(value = "/seat", produces = MediaType.APPLICATION_JSON_VALUE)
+public class SeatController {
     @Autowired
-    @Qualifier(value = "simpleTicketService")
-    private SimpleService<Ticket> ticketService;
+    @Qualifier(value = "simpleSeatService")
+    private SimpleService<Seat> seatService;
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
-    public ResponseEntity<Ticket> getSeatById(@RequestParam long id) {
-        Ticket ticket = ticketService.getById(id);
-        return new ResponseEntity<Ticket>(ticket, HttpStatus.OK);
+    public ResponseEntity<Seat> getSeatById(@RequestParam long id) {
+        Seat seat = seatService.getById(id);
+        return new ResponseEntity<Seat>(seat, HttpStatus.OK);
     }
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public ResponseEntity<Ticket> save(@RequestBody Ticket ticket) {
-       ticketService.save(ticket);
-        return new ResponseEntity<Ticket>(ticket, HttpStatus.OK);
+    public ResponseEntity<Seat> save(@RequestBody Seat seat){
+        seatService.save(seat);
+        return new ResponseEntity<Seat>(seat,HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Ticket> test() {
-        Ticket ticket = new Ticket();
-        return new ResponseEntity<Ticket>(ticket, HttpStatus.OK);
+    public ResponseEntity<Seat> test(){
+        Seat seat = new Seat();
+        return new ResponseEntity<Seat>(seat,HttpStatus.OK);
     }
 }

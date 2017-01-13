@@ -1,6 +1,6 @@
-package com.flightbooking.mvc;
+package com.flightbooking.controller;
 
-import com.flightbooking.domain.Flight;
+import com.flightbooking.model.Flight;
 import com.flightbooking.service.SimpleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

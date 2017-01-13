@@ -1,7 +1,7 @@
 package com.flightbooking.service;
 
-import com.flightbooking.domain.Seat;
-import com.flightbooking.persistence.Dao;
+import com.flightbooking.model.Seat;
+import com.flightbooking.repository.Dao;
 
 /**
  * Created by Stanislav Pugach on 22.11.2016.

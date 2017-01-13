@@ -1,9 +1,9 @@
-package com.flightbooking.persistence;
+package com.flightbooking.repository;
 
-import com.flightbooking.domain.Flight;
-import com.flightbooking.domain.Plane;
-import com.flightbooking.domain.Seat;
-import com.flightbooking.domain.Ticket;
+import com.flightbooking.model.Flight;
+import com.flightbooking.model.Plane;
+import com.flightbooking.model.Seat;
+import com.flightbooking.model.Ticket;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

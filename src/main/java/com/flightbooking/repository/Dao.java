@@ -1,4 +1,4 @@
-package com.flightbooking.persistence;
+package com.flightbooking.repository;
 
 /**
  * Created by Stanislav Pugach on 18.11.2016.
